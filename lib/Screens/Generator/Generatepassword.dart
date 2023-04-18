@@ -133,7 +133,9 @@ class _PasswordGeneratorPagestate extends State<PasswordGeneratorPage> {
     Clipboard.setData(ClipboardData(text: text));
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
+        backgroundColor: Colors.green,
         content: Text('Copied to clipboard'),
+        duration: Duration(seconds: 2),
       ),
     );
   }

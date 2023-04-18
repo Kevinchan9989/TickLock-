@@ -370,18 +370,6 @@ class _PasswordVaultScreenState extends State<PasswordVaultScreen> {
                                                     onPressed: () {
                                                       Navigator.of(context)
                                                           .pop(false);
-                                                      ScaffoldMessenger.of(
-                                                              context)
-                                                          .showSnackBar(
-                                                        const SnackBar(
-                                                          backgroundColor:
-                                                              Colors.green,
-                                                          content: Text(
-                                                              'Account Deleted Successfully!'),
-                                                          duration: Duration(
-                                                              seconds: 2),
-                                                        ),
-                                                      );
                                                     },
                                                     child: Text(
                                                       'Cancel',

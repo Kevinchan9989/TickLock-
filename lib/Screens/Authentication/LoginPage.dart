@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
     } on Exception catch (e) {
-      // TODO
+      //TODO
       print(e);
 
       //show snackbar message
@@ -54,120 +54,131 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     //login page
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text('Welcome Back!',
-              style: TextStyle(
-                  fontSize: 35,
-                  color: MainColor.primaryColor10,
-                  fontWeight: FontWeight.bold)),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      hintText: 'Enter Email',
-                      prefixIcon: Icon(Icons.email),
-                      border: OutlineInputBorder(),
-                    ),
-
-                    //check if email is entered in the correct form
-                    validator: (email) =>
-                        email!.isEmpty && !EmailValidator.validate(email)
-                            ? 'Please Enter Your Email'
-                            : null,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  TextFormField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      hintText: 'Enter Password',
-                      prefixIcon: Icon(Icons.password),
-                      border: OutlineInputBorder(),
-                    ),
-
-                    //checks if password is entered
-                    validator: (value) {
-                      return value!.isEmpty
-                          ? 'Please Enter Your Password'
-                          : null;
-                    },
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  MaterialButton(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 100,
+            ),
+            const Image(
+              image: AssetImage('lib/assets/icon.jpg'),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Text('Welcome Back!',
+                style: TextStyle(
+                    fontSize: 35,
                     color: MainColor.primaryColor10,
-                    //minWidth: double.infinity,
-                    onPressed: signIn,
-
-                    child: Text('Login'),
-                    //color: Colors.black,
-                    textColor: Colors.white,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  GestureDetector(
-                    child: Text('Forgot Password',
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
-                        )),
-
-                    //go to forgot password page when clicked
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ForgotPasswordPage()));
-                    },
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'New User? ',
-                        //style: TextStyle(fontSize: 25.0),
+                    fontWeight: FontWeight.bold)),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        hintText: 'Enter Email',
+                        prefixIcon: Icon(Icons.email),
+                        border: OutlineInputBorder(),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RegisterPage()));
-                        },
-                        child: Text('Register',
-                            style: TextStyle(
-                              color: Colors.blueGrey,
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            )),
+
+                      //check if email is entered in the correct form
+                      validator: (email) =>
+                          email!.isEmpty && !EmailValidator.validate(email)
+                              ? 'Please Enter Your Email'
+                              : null,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        hintText: 'Enter Password',
+                        prefixIcon: Icon(Icons.password),
+                        border: OutlineInputBorder(),
                       ),
-                    ],
-                  )
-                ],
+
+                      //checks if password is entered
+                      validator: (value) {
+                        return value!.isEmpty
+                            ? 'Please Enter Your Password'
+                            : null;
+                      },
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    MaterialButton(
+                      color: MainColor.primaryColor10,
+                      //minWidth: double.infinity,
+                      onPressed: signIn,
+
+                      child: Text('Login'),
+                      //color: Colors.black,
+                      textColor: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      child: Text('Forgot Password',
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          )),
+
+                      //go to forgot password page when clicked
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPasswordPage()));
+                      },
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'New User? ',
+                          //style: TextStyle(fontSize: 25.0),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterPage()));
+                          },
+                          child: Text('Register',
+                              style: TextStyle(
+                                color: Colors.blueGrey,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline,
+                              )),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
 
