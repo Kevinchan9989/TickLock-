@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915518109382",
+    "project_id": "group-pwmanager",
+    "storage_bucket": "group-pwmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915518109382:android:13ca435057c8b56894c9c7",
+        "android_client_info": {
+          "package_name": "com.example.pwmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915518109382-5h86315qv5b2g98b5vh00bbs7q2ob0f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4LS5HKB-HLVqTO8NZjzVBLH3VIb7rKaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915518109382-5h86315qv5b2g98b5vh00bbs7q2ob0f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
