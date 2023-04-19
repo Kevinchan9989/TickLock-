@@ -32,12 +32,12 @@ class Auth extends StatelessWidget {
                         AsyncSnapshot<DocumentSnapshot> snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         if (snapshot.hasData && snapshot.data!.exists) {
-                          // User already exists in the database, show PasswordPrompt screen
+                          // User already exists in the database, show MyHomePage screen
                           return const MyHomePage(
                             title: 'Password Vault',
                           );
                         } else {
-                          // User does not exist in the database, show PasswordVaultScreen
+                          // User does not exist in the database, show PasswordPrompt screen
                           return const PasswordPrompt();
                         }
                       } else {

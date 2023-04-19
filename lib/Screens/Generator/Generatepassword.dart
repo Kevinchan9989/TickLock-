@@ -23,7 +23,7 @@ class _PasswordGeneratorPagestate extends State<PasswordGeneratorPage> {
   bool _includeNumbers = true;
   bool _includeSpecialChars = true;
   bool _generateUsername = false; // Add this line to manage the toggle state
-  int _minSpecialChars = 0;
+  int _minSpecialChars = 1;
 
 // Helper functions
   String _generateItem(bool isUsername) {

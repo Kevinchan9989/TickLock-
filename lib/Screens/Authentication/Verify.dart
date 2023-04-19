@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pwmanager/Screens/Authentication/Auth.dart';
+import 'package:pwmanager/Screens/Vault/promptMP.dart';
 import 'package:pwmanager/Screens/mainframe.dart';
 
 class Verify extends StatefulWidget {
@@ -69,7 +71,7 @@ class _VerifyState extends State<Verify> {
 
   //if verified, go to password vault, else show verification email sent page
   Widget build(BuildContext context) => isVerified
-      ? const MyHomePage(title: "Password Vault")
+      ? PasswordPrompt()
       : Scaffold(
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
